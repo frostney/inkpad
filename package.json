@@ -1,0 +1,9 @@
+{
+  "name": "inkpad",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "express": "~2",
+    "nstore": "*"
+  }
+}
