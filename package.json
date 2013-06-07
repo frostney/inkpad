@@ -2,8 +2,12 @@
   "name": "inkpad",
   "version": "0.1.0",
   "private": true,
+  "scripts": {
+    "start": "coffee app.coffee"
+  },
   "dependencies": {
-    "express": "~2",
-    "nstore": "*"
+    "express": "~3",
+    "hjs": "*",
+    "stylus": "*"
   }
 }
