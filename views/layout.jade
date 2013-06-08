@@ -2,13 +2,30 @@ doctype 5
 html
   head
     title= title
+    link(rel='stylesheet', href='/stylesheets/bootstrap.css')
     link(rel='stylesheet', href='/stylesheets/style.css')
   body
     header
-      #logo
-      nav
-        for val, key in navigation
-          li
-            a(href="#{val}")= key
+      .navbar
+        .navbar-inner
+          a.brand(href="#") Inkpad
+          ul.nav
+            for val, key in navigation
+              if val.type == 'simple'
+                li
+                  a(href="#{val.link}")= key
+              else
+                li.dropdown
+                  a.dropdown-toggle(data-toggle="dropdown",href="#")= key
+                    b.caret
+                  ul.dropdown-menu
+                    for subval, subkey in val.links
+                      li
+                        a(href="#{subval}")= subkey
+            form.navbar-search.pull-left
+              input.search-jquery(type="text",placeholder="Search")
     block content
     footer Inkpad
+    
+    script(src='http://code.jquery.com/jquery.js')
+    script(src='/js/bootstrap.js')
