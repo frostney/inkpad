@@ -22,7 +22,17 @@ app.use express.static(path.join(__dirname, 'public'))
 
 app.use(express.errorHandler()) if app.get('env') is 'development'
 
+# Index
 app.get '/', routes.dashboard
+
+# Posts
+app.get '/post', routes.post.list
+app.get '/post/add', routes.post.add
+
+# Pages
+app.get '/page', routes.page.list
+app.get '/page/add', routes.page.add
+
 
 http.createServer(app).listen app.get('port'), ->
   console.log "Express server listening on port #{app.get('port')}"
