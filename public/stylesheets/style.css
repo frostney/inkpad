@@ -24,6 +24,6 @@ nav li a {
 a {
   color: #00b7ff;
 }
-#epiceditor {
+.editor {
   height: 500px;
 }
