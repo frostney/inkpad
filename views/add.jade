@@ -11,12 +11,16 @@ block content
         i(data-time-icon="icon-time", date-date-icon="icon-calendar")
 
   .well
-    #epiceditor
+    div.editor(id="epiceditor-#{uuid}")
   
   .well.well-small
     button.btn Upload
+
+block stylesheets
+  link(rel='stylesheet', href='/stylesheets/bootstrap-datetimepicker.min.css')
         
 block scripts
+  script(src='/js/bootstrap-datetimepicker.min.js')
   script(src="/js/epiceditor.js")
   script(type="text/javascript")
     $(function() {
@@ -29,6 +33,9 @@ block scripts
       var picker = $('#datetimepicker').data('datetimepicker');
       picker.setLocalDate(new Date());
       
-      var editor = new EpicEditor({basePath: '/epiceditor', height: '500px'}).load();
+      var editor = new EpicEditor({
+        basePath: '/epiceditor',
+        container: 'epiceditor-#{uuid}'
+      }).load();
       
     });
