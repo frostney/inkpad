@@ -2,3 +2,33 @@ extends layout
 
 block content
   header Add new #{type}
+  
+  .well.well-small
+    div Set #{type} date
+    div#datetimepicker.input-append
+      input(data-format="MM/dd/yyyy HH:mm:ss PP", type="text")
+      span.add-on
+        i(data-time-icon="icon-time", date-date-icon="icon-calendar")
+
+  .well
+    #epiceditor
+  
+  .well.well-small
+    button.btn Upload
+        
+block scripts
+  script(src="/js/epiceditor.js")
+  script(type="text/javascript")
+    $(function() {
+    
+      $('#datetimepicker').datetimepicker({
+        language: 'en',
+        pick12HourFormat: true
+      });
+      
+      var picker = $('#datetimepicker').data('datetimepicker');
+      picker.setLocalDate(new Date());
+      
+      var editor = new EpicEditor({basePath: '/epiceditor', height: '500px'}).load();
+      
+    });
