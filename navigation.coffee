@@ -19,6 +19,9 @@ module.exports =
   'Theme': 
     type: 'simple'
     link: '/theme'
+  'Settings':
+    type: 'simple'
+    link: '/settings'
   'Generate':
     type: 'simple'
     link: '/generate'
