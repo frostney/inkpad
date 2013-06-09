@@ -4,3 +4,4 @@ module.exports = (req, res) ->
   
   res.render 'list',
     navigation: navigation
+    currentPage: 'Posts'
