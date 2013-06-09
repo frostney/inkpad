@@ -3,6 +3,7 @@ html
   head
     title= title
     link(rel='stylesheet', href='/stylesheets/bootstrap.css')
+    link(rel='stylesheet', href='/stylesheets/bootstrap-datetimepicker.min.css')
     link(rel='stylesheet', href='/stylesheets/style.css')
   body
     header
@@ -12,8 +13,12 @@ html
           ul.nav
             for val, key in navigation
               if val.type == 'simple'
-                li
-                  a(href="#{val.link}")= key
+                if currentPage == key
+                  li.active
+                    a(href="#{val.link}")= key
+                 else
+                   li
+                     a(href="#{val.link}")= key
               else
                 li.dropdown
                   a.dropdown-toggle(data-toggle="dropdown",href="#")= key
@@ -30,3 +35,5 @@ html
     
     script(src='http://code.jquery.com/jquery.js')
     script(src='/js/bootstrap.js')
+    script(src='/js/bootstrap-datetimepicker.min.js')
+    block scripts
