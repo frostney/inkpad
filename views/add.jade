@@ -4,6 +4,8 @@ block content
   header Add new #{type}
   
   .well.well-small
+    div
+  
     div Set #{type} date
     div#datetimepicker.input-append
       input(data-format="MM/dd/yyyy HH:mm:ss PP", type="text")
@@ -13,7 +15,11 @@ block content
   .well
     div.editor(id="epiceditor-#{uuid}")
   
+  .well
+    div Media
+  
   .well.well-small
+    input(type="text")
     button.btn Upload
 
 block stylesheets
