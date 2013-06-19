@@ -1,4 +1,5 @@
 navigation = require '../../navigation'
+Configurator = require '../../configurator'
 uuid = require 'node-uuid'
 
 module.exports = (req, res) ->
@@ -7,3 +8,4 @@ module.exports = (req, res) ->
     navigation: navigation
     type: 'page'
     uuid: uuid.v4()
+    author: Configurator.get().author
